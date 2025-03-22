@@ -26,6 +26,6 @@ public class ContainerL : Container, IHazardNotifier
 
     public void NotifyHazard(string serialNumber)
     {
-        
+        Console.WriteLine($"Warning: Hazardous event happened with container: {serialNumber}");
     }
 }
