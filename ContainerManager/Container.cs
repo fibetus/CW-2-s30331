@@ -33,7 +33,7 @@ public abstract class Container
     {
         if (weight + CurrentWeight > MaxLoadWeight)
         {
-            throw new Exception($"OverfillExcpetion: Overfilling of container {SerialNumber}");
+            throw new OverfillException($"OverfillExcpetion: Overfilling of container {SerialNumber}");
         }
         CurrentWeight += weight;
     }
