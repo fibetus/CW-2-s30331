@@ -45,7 +45,7 @@ public abstract class Container
 
     public override string ToString()
     {
-        return $"{SerialNumber}: {CurrentWeight}/{MaxLoadWeight} kg";
+        return $"{SerialNumber}: {CurrentWeight}/{MaxLoadWeight} kg, Own Container Weight: {ConatinerWeight} kg, Height {Height} kg, Depth {Depth} kg";
     }
     
 }
