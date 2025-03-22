@@ -10,7 +10,7 @@ public class ContainerL : Container, IHazardNotifier
         IsHazardous = isHazardous;
     }
 
-    protected override void LoadContainer(double weight)
+    public override void LoadContainer(double weight)
     {
         double limit = IsHazardous ? MaxLoadWeight * 0.5 : MaxLoadWeight * 0.9;
 

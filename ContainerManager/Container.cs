@@ -12,7 +12,7 @@ public abstract class Container
     public string SerialNumber { get; }
     public double MaxLoadWeight { get; }
 
-    protected Container(string containgerType, double height, double conatinerWeight, double depth, double maxLoadWeight)
+    public Container(string containgerType, double height, double conatinerWeight, double depth, double maxLoadWeight)
     {
         int id;
         do
@@ -29,7 +29,7 @@ public abstract class Container
         MaxLoadWeight = maxLoadWeight;
     }
 
-    protected virtual void LoadContainer(double weight)
+    public virtual void LoadContainer(double weight)
     {
         if (weight + CurrentWeight > MaxLoadWeight)
         {
@@ -38,7 +38,7 @@ public abstract class Container
         CurrentWeight += weight;
     }
 
-    protected virtual void UnloadContainer()
+    public virtual void UnloadContainer()
     {
         CurrentWeight = 0.0;
     }

@@ -68,10 +68,11 @@ public class ContainerShip
 
     public void MoveContainerOntoAnotherShip(ContainerShip anotherShip, string containerSerialNumber)
     {
-        UnloadContainerFromShip(containerSerialNumber);
         try
         {
-            anotherShip.LoadContainerOntoShip(containers.FirstOrDefault(c => c.SerialNumber == containerSerialNumber));
+            var tempContainer = containers.FirstOrDefault(c => c.SerialNumber == containerSerialNumber);
+            UnloadContainerFromShip(containerSerialNumber);
+            anotherShip.LoadContainerOntoShip(tempContainer);
         }
         catch (ArgumentNullException e)
         {

@@ -11,7 +11,7 @@ public class ContainerG : Container, IHazardNotifier
         Pressure = pressure;
     }
 
-    protected override void UnloadContainer()
+    public override void UnloadContainer()
     {
         CurrentWeight *= 0.05;
     }
