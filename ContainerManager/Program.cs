@@ -74,11 +74,19 @@ public class Program
         {
             ship1.LoadContainerOntoShip(containerC);
             Console.WriteLine($"Loaded {containerC.SerialNumber} onto Ship 1");
+            
+            //trying to load same container multiple times
+            ship1.LoadContainerOntoShip(containerC);
+            Console.WriteLine($"Loaded {containerC.SerialNumber} onto Ship 1");
+            ship1.LoadContainerOntoShip(containerC);
+            Console.WriteLine($"Loaded {containerC.SerialNumber} onto Ship 1");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error loading container: {ex.Message}");
         }
+        Console.WriteLine();
+        ship1.GetShipInfo();
         Console.WriteLine();
         
         

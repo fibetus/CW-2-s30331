@@ -2,7 +2,7 @@
 
 public class ContainerShip
 {
-    private List<Container> containers = new List<Container>();
+    private HashSet<Container> containers = new HashSet<Container>();
     
     public int MaxContainers { get; }
     public double MaxWeight { get; }
@@ -37,7 +37,7 @@ public class ContainerShip
 
     public void LoadContainerOntoShip(List<Container> containers)
     {
-        this.containers.AddRange(containers);
+        this.containers.UnionWith(containers);
     }
 
     public void UnloadContainerFromShip(String containerSerialNumber)
