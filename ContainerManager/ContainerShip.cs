@@ -11,7 +11,7 @@ public class ContainerShip
     public ContainerShip(int maxContainers, double maxWeight, double speed)
     {
         MaxContainers = maxContainers;
-        MaxWeight = maxWeight;
+        MaxWeight = maxWeight * 1000;
         Speed = speed;
     }
 

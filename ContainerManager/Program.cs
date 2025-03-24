@@ -5,10 +5,10 @@ public class Program
     public static void Main(string[] args)
     {
         Console.WriteLine("1. CREATING SHIPS");
-        var ship1 = new ContainerShip(maxContainers: 10, maxWeight: 100000, speed: 30);
+        var ship1 = new ContainerShip(maxContainers: 10, maxWeight: 100, speed: 30);
         Console.WriteLine("Created Ship 1 with max 10 containers, 100000 kg capacity, speed 30 knots");
             
-        var ship2 = new ContainerShip(maxContainers: 5, maxWeight: 50000, speed: 35);
+        var ship2 = new ContainerShip(maxContainers: 5, maxWeight: 50, speed: 35);
         Console.WriteLine("Created Ship 2 with max 5 containers, 50000 kg capacity, speed 35 knots");
         Console.WriteLine();
         
@@ -23,6 +23,7 @@ public class Program
             maxLoadWeight: 20000
         );
         Console.WriteLine($"Created refrigerated container: {containerC.SerialNumber}");
+        
             
         var containerL = new ContainerL(
             isHazardous: true,
@@ -41,6 +42,26 @@ public class Program
             maxLoadWeight: 18000
         );
         Console.WriteLine($"Created gas container: {containerG.SerialNumber}");
+        Console.WriteLine();
+        
+        Console.WriteLine("2.1 CREATING CONTAINERC WITH TOO LOW TEMPERATURE");
+
+        try
+        {
+            var containerCWithException = new ContainerC(
+                productType: "Meat",
+                temperature: -19,
+                height: 2.5,
+                conatinerWeight: 2000,
+                depth: 6.0,
+                maxLoadWeight: 20000
+            );
+            Console.WriteLine($"Created refrigerated container: {containerCWithException.SerialNumber}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception caught: {ex.Message}");
+        }
         Console.WriteLine();
         
         Console.WriteLine("3. LOADING CARGO INTO CONTAINERS");
